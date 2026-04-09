@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <!-- NAVBAR -->
+        <div class="navArea">
+
+            <div class="logo">
+                <img src="../image/logo.png" alt="LOGO">
+            </div>
+
+
+            <div class="lists">
+                <ul>
+                    <li><a href="#home">Home🛖</a></li>
+                    <li><a href="./about.html" target="_blank">About🙎</a></li>
+                    <li><a href="./recipe.html" target="_blank">Recipes🍔</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <h1>Welcome to Food World 🍕</h1>
+            <p>Delicious recipes & tasty food everyday</p>
+            <button>Explore Now</button>
+        </div>
+
+    </div>
+
+    <!-- SECTION -->
+    <div class="section">
+        <h2>Our Popular Foods</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="../image/images.jpg">
+                <h3>Pizza</h3>
+            </div>
+
+            <div class="card">
+                <img src="../image/burger.jpg">
+                <h3>Burger</h3>
+            </div>
+
+            <div class="card">
+                <img src="../image/pasta.avif">
+                <h3>Pasta</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Food Website | Made by Haris</p>
+    </footer>
+
+
+
+
+
+
+    <script>
+        // BUTTON CLICK ALERT
+        document.querySelector("button").addEventListener("click", function () {
+            alert("Welcome to Food World 🍕");
+        });
+
+        // SMOOTH SCROLL EFFECT
+        document.querySelectorAll("li").forEach(item => {
+            item.addEventListener("click", () => {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // SCROLL ANIMATION (cards appear)
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".card").forEach(card => {
+                let position = card.getBoundingClientRect().top;
+                let screen = window.innerHeight;
+
+                if (position < screen - 100) {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                }
+            });
+        });
+
+        // INITIAL STYLE FOR CARDS
+        document.querySelectorAll(".card").forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(50px)";
+            card.style.transition = "0.5s";
+        });
+    </script>
+</body>
+
+</html>
